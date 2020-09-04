@@ -1,6 +1,7 @@
 package com.gojek.solution.command;
 
 import com.gojek.solution.OutputPrinter;
+import com.gojek.solution.exceptions.InvalidCommandException;
 import com.gojek.solution.model.Command;
 import com.gojek.solution.service.ParkingLotService;
 
@@ -39,5 +40,10 @@ public class CommandFactory {
     }
 
     public CommandExecutor getCommandExecuter(Command command) {
+        final CommandExecutor commandExecutor = commands.get(command.getCommandName());
+        if(commandExecutor ==null)
+            throw new InvalidCommandException();
+        return commandExecutor;
+
     }
 }
