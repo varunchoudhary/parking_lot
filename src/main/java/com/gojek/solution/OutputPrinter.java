@@ -7,4 +7,10 @@ public class OutputPrinter {
 
     public void welcome() {
     }
+
+    public void printWithNewLine(String toString) {
+    }
+
+    public void notFound() {
+    }
 }

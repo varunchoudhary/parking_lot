@@ -39,7 +39,7 @@ public class CommandFactory {
                 new ExitCommandExecutor(parkingLotService, outputPrinter));
     }
 
-    public CommandExecutor getCommandExecuter(Command command) {
+    public CommandExecutor getCommandExecuter(Command command) throws InvalidCommandException {
         final CommandExecutor commandExecutor = commands.get(command.getCommandName());
         if(commandExecutor ==null)
             throw new InvalidCommandException();
