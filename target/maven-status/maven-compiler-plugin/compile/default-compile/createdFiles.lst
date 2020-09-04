@@ -1,3 +1,15 @@
-com/gojek/solution/exceptions/InvalidModeException.class
-com/gojek/solution/Main.class
+com/gojek/solution/model/Slot.class
+com/gojek/solution/service/ParkingLotService.class
+com/gojek/solution/model/ParkingLot.class
+com/gojek/solution/exceptions/NoFreeSlotAvailableException.class
+com/gojek/solution/exceptions/InvalidCommandException.class
+com/gojek/solution/model/Car.class
+com/gojek/solution/exceptions/SlotAlreadyOccupiedException.class
+com/gojek/solution/model/Command.class
+com/gojek/solution/strategy/ParkingStrategy.class
 com/gojek/solution/OutputPrinter.class
+com/gojek/solution/exceptions/InvalidModeException.class
+com/gojek/solution/exceptions/InvalidSlotException.class
+com/gojek/solution/Main.class
+com/gojek/solution/exceptions/ParkingLotException.class
+com/gojek/solution/strategy/NaturalOrderingParkingStrategy.class

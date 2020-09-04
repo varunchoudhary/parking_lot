@@ -1,3 +1,15 @@
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/strategy/ParkingStrategy.java
 /Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/Main.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/service/ParkingLotService.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/model/Car.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/strategy/NaturalOrderingParkingStrategy.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/exceptions/InvalidSlotException.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/exceptions/InvalidCommandException.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/exceptions/SlotAlreadyOccupiedException.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/model/ParkingLot.java
 /Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/OutputPrinter.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/model/Slot.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/exceptions/ParkingLotException.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/exceptions/NoFreeSlotAvailableException.java
+/Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/model/Command.java
 /Users/varun/repos/javaprc/parking_lot/src/main/java/com/gojek/solution/exceptions/InvalidModeException.java
