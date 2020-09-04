@@ -2,6 +2,7 @@ package com.gojek.solution.mode;
 
 import com.gojek.solution.OutputPrinter;
 import com.gojek.solution.command.CommandFactory;
+import com.gojek.solution.command.ExitCommandExecutor;
 import com.gojek.solution.exceptions.InvalidCommandException;
 import com.gojek.solution.model.Command;
 
