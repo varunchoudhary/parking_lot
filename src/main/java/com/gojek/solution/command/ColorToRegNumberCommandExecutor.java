@@ -7,6 +7,7 @@ import com.gojek.solution.model.Slot;
 import com.gojek.solution.service.ParkingLotService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ColorToRegNumberCommandExecutor extends CommandExecutor {
     public static final String COMMAND_NAME = "registration_numbers_for_cars_with_colour";
@@ -26,11 +27,11 @@ public class ColorToRegNumberCommandExecutor extends CommandExecutor {
         if(slots.isEmpty())
             outputPrinter.notFound();
         else{
-             StringBuilder registrationNumberForColor= new StringBuilder();
-             for (Slot slot:slots)
-                 if(slot.getParkedCar().getColor().equals(command.getParams().get(0)))
-                     registrationNumberForColor.append(slot.getParkedCar().getRegistrationNumber());
-             outputPrinter.printWithNewLine(registrationNumberForColor.toString());
+            final String result =
+                    slots.stream()
+                            .map(slot -> slot.getParkedCar().getRegistrationNumber())
+                            .collect(Collectors.joining(", "));
+            outputPrinter.printWithNewLine(result);
         }
     }
 }

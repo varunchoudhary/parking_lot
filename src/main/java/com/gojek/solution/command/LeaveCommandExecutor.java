@@ -8,7 +8,7 @@ import com.gojek.solution.service.ParkingLotService;
 import java.util.List;
 
 public class LeaveCommandExecutor extends CommandExecutor {
-    public static final String COMMAND_NAME = "LEAVE";
+    public static final String COMMAND_NAME = "leave";
 
     public LeaveCommandExecutor(ParkingLotService parkingLotService, OutputPrinter outputPrinter) {
         super(parkingLotService,outputPrinter);
@@ -28,6 +28,8 @@ public class LeaveCommandExecutor extends CommandExecutor {
 
     @Override
     public void execute(Command command) throws ParkingLotException {
-
+        final int slotNum = Integer.parseInt(command.getParams().get(0));
+        parkingLotService.makeSlotFree(slotNum);
+        outputPrinter.printWithNewLine("Slot number " + slotNum + " is free");
     }
 }

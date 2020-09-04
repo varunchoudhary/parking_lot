@@ -1,29 +1,43 @@
 package com.gojek.solution.strategy;
-
 import com.gojek.solution.exceptions.NoFreeSlotAvailableException;
 
 import java.util.TreeSet;
 
-public class NaturalOrderingParkingStrategy implements ParkingStrategy{
+/**
+ * Parking strategy in which the natural ordering numbers are used for deciding the slot numbers.
+ * For example, 1st car will be parked in slot 1, then next in slot 2, then in slot 3, and so on.
+ */
+public class NaturalOrderingParkingStrategy implements ParkingStrategy {
     TreeSet<Integer> slotTreeSet;
 
     public NaturalOrderingParkingStrategy() {
-        this.slotTreeSet = new TreeSet<Integer>();
+        this.slotTreeSet = new TreeSet<>();
     }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public void addSlot(Integer slotNumber){
+    public void addSlot(Integer slotNumber) {
         this.slotTreeSet.add(slotNumber);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public void removeSlot(Integer slotNUmber){
-        this.slotTreeSet.remove(slotNUmber);
+    public void removeSlot(Integer slotNumber) {
+        this.slotTreeSet.remove(slotNumber);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public Integer getNextSlot() throws NoFreeSlotAvailableException {
-        if(slotTreeSet.isEmpty())
+    public Integer getNextSlot() {
+        if (slotTreeSet.isEmpty()) {
             throw new NoFreeSlotAvailableException();
+        }
         return this.slotTreeSet.first();
     }
 }

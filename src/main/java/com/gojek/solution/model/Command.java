@@ -4,6 +4,7 @@ import com.gojek.solution.exceptions.InvalidCommandException;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Command {
     private static final String SPACE =" ";
@@ -15,7 +16,9 @@ public class Command {
     public List<String> getParams() { return params; }
 
     public Command(final String inputLine) throws InvalidCommandException {
-        final List<String> inputList = Arrays.asList(inputLine.trim().split(SPACE));
+        final List<String> inputList = Arrays.stream(inputLine.trim().split(SPACE))
+                .map(String::trim)
+                .filter(token -> (token.length() > 0)).collect(Collectors.toList());
         if (inputList.size() == 0) { throw new InvalidCommandException(); }
         commandName = inputList.get(0).toLowerCase();
         inputList.remove(0);

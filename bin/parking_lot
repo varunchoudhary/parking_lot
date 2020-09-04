@@ -4,7 +4,7 @@ SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
 cd "${SCRIPT_DIR}"
 cd ..
 
-JAR_RELATIVE_PATH=target/parking-lot-1.0-SNAPSHOT.jar
+JAR_RELATIVE_PATH=target/parking_lot-1.0-SNAPSHOT.jar
 
 if [ -z "$1" ] ; then
         java -jar $JAR_RELATIVE_PATH

@@ -7,6 +7,7 @@ import com.gojek.solution.model.Slot;
 import com.gojek.solution.service.ParkingLotService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class SlotForRegNumberCommandExecutor extends CommandExecutor {
     public static String COMMAND_NAME = "slot_number_for_registration_number";
@@ -19,14 +20,15 @@ public class SlotForRegNumberCommandExecutor extends CommandExecutor {
 
     @Override
     public void execute(Command command) throws ParkingLotException {
-        final List<Slot> occupiedSlot = parkingLotService.getOccupiedSlots();
-        if(occupiedSlot.isEmpty()) {
-            outputPrinter.notFound();
+        final List<Slot> occupiedSlots = parkingLotService.getOccupiedSlots();
+        final String regNumberToFind = command.getParams().get(0);
+        final Optional<Slot> foundSlot = occupiedSlots.stream()
+                .filter(slot -> slot.getParkedCar().getRegistrationNumber().equals(regNumberToFind))
+                .findFirst();
+        if(foundSlot.isPresent()){
+            outputPrinter.printWithNewLine(foundSlot.get().getSlotNumber().toString());
         }else {
-            final String registrationNumberToFind = command.getParams().get(0);
-            for (Slot slot : occupiedSlot)
-                if (slot.getParkedCar().getRegistrationNumber().equals(registrationNumberToFind))
-                    outputPrinter.printWithNewLine(slot.getSlotNumber().toString());
+            outputPrinter.notFound();
         }
     }
 }

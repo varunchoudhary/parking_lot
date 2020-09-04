@@ -3,7 +3,6 @@ package com.gojek.solution.model;
 import com.gojek.solution.exceptions.InvalidSlotException;
 import com.gojek.solution.exceptions.ParkingLotException;
 import com.gojek.solution.exceptions.SlotAlreadyOccupiedException;
-import org.omg.CORBA.INTERNAL;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +23,7 @@ public class ParkingLot {
     }
 
      private Slot getSlot(final Integer slotNumber) throws InvalidSlotException {
-        if(slotNumber>=MAX_CAPACITY || slotNumber<=0)
+        if(slotNumber> getCapacity() || slotNumber<=0)
             throw new InvalidSlotException();
         final Map<Integer,Slot> allSlots = getSlots();
         if(!allSlots.containsKey(slotNumber)){
@@ -35,7 +34,7 @@ public class ParkingLot {
 
      public Slot park(final Car car,final Integer slotNumber) throws InvalidSlotException, SlotAlreadyOccupiedException {
         final Slot slot = getSlot(slotNumber);
-        if(slot.isSlotFree()){
+        if(!slot.isSlotFree()){
             throw new SlotAlreadyOccupiedException();
         }
          slot.assignCar(car);

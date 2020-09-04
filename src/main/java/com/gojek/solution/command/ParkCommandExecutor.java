@@ -29,13 +29,10 @@ public class ParkCommandExecutor extends CommandExecutor {
             outputPrinter.printWithNewLine("Allocated slot number: " + slot);
         } catch (NoFreeSlotAvailableException e) {
             outputPrinter.parkingLotFull();
-            e.printStackTrace();
         } catch (SlotAlreadyOccupiedException e) {
             outputPrinter.slotAlreadyfilled();
-            e.printStackTrace();
         } catch (InvalidSlotException e) {
             outputPrinter.notFound();
-            e.printStackTrace();
         }
     }
 }

@@ -22,7 +22,7 @@ public class ParkingLotService {
             throw new ParkingLotException("Parking lot already exists.");
         this.parkingLot = parkingLot;
         this.parkingStrategy = parkingStrategy;
-        for(int i=0;i<parkingLot.getCapacity();i++){
+        for(int i=1;i<=parkingLot.getCapacity();i++){
             parkingStrategy.addSlot(i);
         }
     }
