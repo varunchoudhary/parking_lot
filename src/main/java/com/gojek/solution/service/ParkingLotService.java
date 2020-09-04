@@ -3,7 +3,6 @@ package com.gojek.solution.service;
 import com.gojek.solution.exceptions.ParkingLotException;
 import com.gojek.solution.model.ParkingLot;
 import com.gojek.solution.model.Slot;
-import com.gojek.solution.strategy.ParkingStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
