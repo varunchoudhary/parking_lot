@@ -1,0 +1,69 @@
+package com.gojek.solution.service;
+
+import com.gojek.solution.exceptions.ParkingLotException;
+import com.gojek.solution.model.ParkingLot;
+import com.gojek.solution.strategy.ParkingStrategy;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class ParkingLotService {
+    private ParkingLot parkingLot;
+    private ParkingStrategy parkingStrategy;
+
+    public void createParkingLot(final ParkingLot parkingLot,final ParkingStrategy parkingStrategy) throws ParkingLotException {
+        if(this.parkingLot != null)
+            throw new ParkingLotException("Parking lot already exists.");
+        this.parkingLot = parkingLot;
+        this.parkingStrategy = parkingStrategy;
+        for(int i=0;i<parkingLot.getCapacity();i++){
+            parkingStrategy.addSlot(i);
+        }
+    }
+    public Integer park(final Car car) throws ParkingLotException {
+        validateParkingLotExists();
+        final Integer nextFreeSlot = parkingStrategy.getNextSlot();
+        parkingLot.park(car,nextFreeSlot);
+        parkingStrategy.removeSlot(nextFreeSlot);
+        return nextFreeSlot;
+    }
+
+    public void makeSlotFree(final Integer slotNumber) throws ParkingLotException {
+        validateParkingLotExists();
+        parkingLot.makeSlotFree(slotNumber);
+        parkingStrategy.addSlot(slotNumber);
+    }
+    public List<Slot> getOccupiedSlots() throws ParkingLotException {
+        validateParkingLotExists();
+        final List<Slot> occupiedSlotsList = new ArrayList<Slot>();
+        final Map<Integer, Slot> allSlots = parkingLot.getSlots();
+
+        for (int i = 1; i <= parkingLot.getCapacity(); i++) {
+            if (allSlots.containsKey(i)) {
+                final Slot slot = allSlots.get(i);
+                if (!slot.isSlotFree()) {
+                    occupiedSlotsList.add(slot);
+                }
+            }
+        }
+        return occupiedSlotsList;
+    }
+
+    public List<Slot>getSlotsForColor(final String color) throws ParkingLotException {
+        final List<Slot> occupiedSlots = getOccupiedSlots();
+        return occupiedSlots.stream()
+                .filter(slot -> slot.getParkedCar().getColor().equals(color))
+                .collect(Collectors.toList());
+
+    }
+
+    private void validateParkingLotExists() throws ParkingLotException {
+        if (parkingLot == null) {
+            throw new ParkingLotException("Parking lot does not exists to park.");
+        }
+    }
+
+
+}
