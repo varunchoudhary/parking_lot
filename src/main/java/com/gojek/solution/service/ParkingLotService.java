@@ -2,12 +2,12 @@ package com.gojek.solution.service;
 
 import com.gojek.solution.exceptions.ParkingLotException;
 import com.gojek.solution.model.ParkingLot;
+import com.gojek.solution.model.Slot;
 import com.gojek.solution.strategy.ParkingStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class ParkingLotService {
     private ParkingLot parkingLot;
@@ -53,10 +53,13 @@ public class ParkingLotService {
 
     public List<Slot>getSlotsForColor(final String color) throws ParkingLotException {
         final List<Slot> occupiedSlots = getOccupiedSlots();
-        return occupiedSlots.stream()
-                .filter(slot -> slot.getParkedCar().getColor().equals(color))
-                .collect(Collectors.toList());
-
+        List<Slot> final_colored_car = new ArrayList<Slot>();
+        for (Slot slot : occupiedSlots){
+            if (slot.getParkedCar().getColor().equals(color)) {
+                final_colored_car.add(slot);
+            }
+        }
+    return final_colored_car;
     }
 
     private void validateParkingLotExists() throws ParkingLotException {
