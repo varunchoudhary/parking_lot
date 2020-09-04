@@ -3,6 +3,7 @@ package com.gojek.solution;
 import com.gojek.solution.command.CommandFactory;
 import com.gojek.solution.exceptions.InvalidCommandException;
 import com.gojek.solution.exceptions.InvalidModeException;
+import com.gojek.solution.exceptions.ParkingLotException;
 import com.gojek.solution.mode.FileMode;
 import com.gojek.solution.mode.InteractiveMode;
 import com.gojek.solution.service.ParkingLotService;
@@ -10,7 +11,7 @@ import com.gojek.solution.service.ParkingLotService;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InvalidCommandException {
+    public static void main(String[] args) throws IOException, InvalidCommandException, ParkingLotException {
         final OutputPrinter outputPrinter = new OutputPrinter();
         final ParkingLotService parkingLotService = new ParkingLotService();
         final CommandFactory commandFactory =
