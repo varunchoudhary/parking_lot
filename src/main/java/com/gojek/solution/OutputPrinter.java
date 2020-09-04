@@ -22,4 +22,10 @@ public class OutputPrinter {
 
     public void statusHeader() {
     }
+
+    public void parkingLotFull() {
+    }
+
+    public void slotAlreadyfilled() {
+    }
 }
