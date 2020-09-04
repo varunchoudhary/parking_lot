@@ -1,8 +1,13 @@
 package com.gojek.solution.service;
 
+import com.gojek.solution.exceptions.InvalidSlotException;
+import com.gojek.solution.exceptions.NoFreeSlotAvailableException;
 import com.gojek.solution.exceptions.ParkingLotException;
+import com.gojek.solution.exceptions.SlotAlreadyOccupiedException;
+import com.gojek.solution.model.Car;
 import com.gojek.solution.model.ParkingLot;
 import com.gojek.solution.model.Slot;
+import com.gojek.solution.strategy.ParkingStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +26,7 @@ public class ParkingLotService {
             parkingStrategy.addSlot(i);
         }
     }
-    public Integer park(final Car car) throws ParkingLotException {
+    public Integer park(final Car car) throws ParkingLotException, NoFreeSlotAvailableException, SlotAlreadyOccupiedException, InvalidSlotException {
         validateParkingLotExists();
         final Integer nextFreeSlot = parkingStrategy.getNextSlot();
         parkingLot.park(car,nextFreeSlot);
@@ -29,7 +34,7 @@ public class ParkingLotService {
         return nextFreeSlot;
     }
 
-    public void makeSlotFree(final Integer slotNumber) throws ParkingLotException {
+    public void makeSlotFree(final Integer slotNumber) throws ParkingLotException, InvalidSlotException {
         validateParkingLotExists();
         parkingLot.makeSlotFree(slotNumber);
         parkingStrategy.addSlot(slotNumber);
