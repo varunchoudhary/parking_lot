@@ -6,6 +6,8 @@ import com.gojek.solution.command.CommandFactory;
 import com.gojek.solution.exceptions.InvalidCommandException;
 import com.gojek.solution.model.Command;
 
+import java.io.IOException;
+
 public abstract class Mode {
     private CommandFactory commandFactory;
     protected OutputPrinter outputPrinter;
@@ -22,4 +24,6 @@ public abstract class Mode {
             throw new InvalidCommandException();
         }
     }
+
+    public abstract void process() throws InvalidCommandException, IOException;
 }
