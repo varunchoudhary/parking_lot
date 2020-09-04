@@ -13,4 +13,10 @@ public class OutputPrinter {
 
     public void notFound() {
     }
+
+    public void parkingLotEmpty() {
+    }
+
+    public void end() {
+    }
 }

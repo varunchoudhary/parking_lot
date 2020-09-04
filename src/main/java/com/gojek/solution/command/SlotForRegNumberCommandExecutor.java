@@ -20,12 +20,13 @@ public class SlotForRegNumberCommandExecutor extends CommandExecutor {
     @Override
     public void execute(Command command) throws ParkingLotException {
         final List<Slot> occupiedSlot = parkingLotService.getOccupiedSlots();
-        final String registrationNumberToFind = command.getParams().get(0);
-        for(Slot slot:occupiedSlot){
-            if(slot.getParkedCar().getRegistrationNumber().equals(registrationNumberToFind)){
-                outputPrinter.printWithNewLine(slot.getSlotNumber().toString());
-            }
+        if(occupiedSlot.isEmpty()) {
+            outputPrinter.notFound();
+        }else {
+            final String registrationNumberToFind = command.getParams().get(0);
+            for (Slot slot : occupiedSlot)
+                if (slot.getParkedCar().getRegistrationNumber().equals(registrationNumberToFind))
+                    outputPrinter.printWithNewLine(slot.getSlotNumber().toString());
         }
-
     }
 }

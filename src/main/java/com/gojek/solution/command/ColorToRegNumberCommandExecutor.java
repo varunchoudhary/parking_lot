@@ -27,12 +27,10 @@ public class ColorToRegNumberCommandExecutor extends CommandExecutor {
             outputPrinter.notFound();
         else{
              StringBuilder registrationNumberForColor= new StringBuilder();
-             for (Slot slot:slots){
+             for (Slot slot:slots)
                  if(slot.getParkedCar().getColor().equals(command.getParams().get(0)))
                      registrationNumberForColor.append(slot.getParkedCar().getRegistrationNumber());
-             }
              outputPrinter.printWithNewLine(registrationNumberForColor.toString());
         }
-
     }
 }

@@ -14,11 +14,11 @@ public class ExitCommandExecutor extends CommandExecutor{
 
     @Override
     public boolean validate(Command command) {
-        return false;
+        return command.getParams().isEmpty();
     }
 
     @Override
     public void execute(Command command) {
-
+        outputPrinter.end();
     }
 }
