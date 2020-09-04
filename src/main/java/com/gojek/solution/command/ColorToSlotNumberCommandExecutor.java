@@ -9,6 +9,8 @@ import com.gojek.solution.service.ParkingLotService;
 import java.util.List;
 
 public class ColorToSlotNumberCommandExecutor extends CommandExecutor {
+    public static final String COMMAND_NAME = "slot_numbers_for_cars_with_colour";
+
     public ColorToSlotNumberCommandExecutor(ParkingLotService parkingLotService, OutputPrinter outputPrinter) {
         super(parkingLotService,outputPrinter);
     }
@@ -27,7 +29,7 @@ public class ColorToSlotNumberCommandExecutor extends CommandExecutor {
             StringBuilder stringBuilder = new StringBuilder();
             for(Slot slot:slotsForColor)
                 if(slot.getParkedCar().getColor().equals(command.getParams().get(0)))
-                    stringBuilder.append(slot.getParkedCar().getRegistrationNumber());
+                    stringBuilder.append(slot.getSlotNumber().toString());
             outputPrinter.printWithNewLine(stringBuilder.toString());
         }
     }
