@@ -19,4 +19,7 @@ public class OutputPrinter {
 
     public void end() {
     }
+
+    public void statusHeader() {
+    }
 }

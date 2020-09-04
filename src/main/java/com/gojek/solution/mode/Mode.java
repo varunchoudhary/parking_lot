@@ -26,5 +26,5 @@ public abstract class Mode {
         }
     }
 
-    public abstract void process() throws InvalidCommandException, IOException;
+    public abstract void process() throws InvalidCommandException, IOException, ParkingLotException;
 }

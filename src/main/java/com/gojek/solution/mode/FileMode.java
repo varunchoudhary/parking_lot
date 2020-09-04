@@ -3,6 +3,7 @@ package com.gojek.solution.mode;
 import com.gojek.solution.OutputPrinter;
 import com.gojek.solution.command.CommandFactory;
 import com.gojek.solution.exceptions.InvalidCommandException;
+import com.gojek.solution.exceptions.ParkingLotException;
 import com.gojek.solution.model.Command;
 
 import java.io.*;
@@ -17,7 +18,7 @@ public class FileMode extends Mode {
     }
 
     @Override
-    public void process() throws InvalidCommandException, IOException {
+    public void process() throws InvalidCommandException, IOException, ParkingLotException {
         final File file = new File(fileName);
         final BufferedReader reader;
         try {

@@ -2,6 +2,7 @@ package com.gojek.solution.command;
 
 import com.gojek.solution.OutputPrinter;
 import com.gojek.solution.exceptions.ParkingLotException;
+import com.gojek.solution.model.Car;
 import com.gojek.solution.model.Command;
 import com.gojek.solution.model.Slot;
 import com.gojek.solution.service.ParkingLotService;
@@ -25,6 +26,22 @@ public class StatusCommandExecutor extends CommandExecutor {
         final List<Slot> slots = parkingLotService.getOccupiedSlots();
         if(slots.isEmpty()){
             outputPrinter.parkingLotEmpty();
+        }else{
+            outputPrinter.statusHeader();
+            for (Slot slot:slots){
+                final Car car = slot.getParkedCar();
+                final String slotNumber = slot.getSlotNumber().toString();
+                outputPrinter.printWithNewLine(padString(slotNumber, 12)
+                        + padString(car.getRegistrationNumber(), 19)
+                        + car.getColor());
+            }
         }
+    }
+    private static String padString(final String word, final int length) {
+        String newWord = word;
+        for(int count = word.length(); count < length; count++) {
+            newWord = newWord + " ";
+        }
+        return newWord;
     }
 }
