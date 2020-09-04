@@ -1,4 +1,4 @@
 package com.gojek.solution.exceptions;
 
-public class NoFreeSlotAvailableException extends Throwable {
+public class NoFreeSlotAvailableException extends ParkingLotException {
 }

@@ -1,4 +1,4 @@
 package com.gojek.solution.exceptions;
 
-public class InvalidCommandException extends Throwable {
+public class InvalidCommandException extends RuntimeException {
 }

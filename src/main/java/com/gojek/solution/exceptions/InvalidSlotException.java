@@ -1,4 +1,4 @@
 package com.gojek.solution.exceptions;
 
-public class InvalidSlotException extends Throwable {
+public class InvalidSlotException extends ParkingLotException {
 }

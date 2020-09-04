@@ -1,4 +1,4 @@
 package com.gojek.solution.exceptions;
 
-public class SlotAlreadyOccupiedException extends Throwable {
+public class SlotAlreadyOccupiedException extends ParkingLotException {
 }

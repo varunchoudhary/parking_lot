@@ -1,6 +1,6 @@
 package com.gojek.solution.exceptions;
 
-public class ParkingLotException extends Throwable {
+public class ParkingLotException extends RuntimeException {
     public ParkingLotException() {
     }
 
