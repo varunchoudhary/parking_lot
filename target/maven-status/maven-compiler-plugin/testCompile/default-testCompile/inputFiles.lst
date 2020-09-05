@@ -1,3 +1,14 @@
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/ExitCommandExecutorTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/StatusCommandExecutorTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/ColorToRegNumberCommandExecutorTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/SlotForRegNumberCommandExecutorTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/ColorToSlotNumberCommandExecutorTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/ParkCommandExecutorTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/CommandFactoryTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/model/CommandTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/strategy/NaturalOrderingParkingStrategyTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/CreateParkingLotCommandExecutorTest.java
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/model/ParkingLotTest.java
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/service/ParkingLotServiceTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/LeaveCommandExecutorTest.java
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/model/CarTest.java

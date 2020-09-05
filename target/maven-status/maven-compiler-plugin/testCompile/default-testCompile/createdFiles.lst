@@ -1,3 +1,14 @@
-com/gojek/solution/model/CarTest.class
+com/gojek/solution/model/CommandTest.class
 com/gojek/solution/model/ParkingLotTest.class
+com/gojek/solution/strategy/NaturalOrderingParkingStrategyTest.class
 com/gojek/solution/service/ParkingLotServiceTest.class
+com/gojek/solution/command/ParkCommandExecutorTest.class
+com/gojek/solution/command/CommandFactoryTest.class
+com/gojek/solution/command/ColorToRegNumberCommandExecutorTest.class
+com/gojek/solution/command/CreateParkingLotCommandExecutorTest.class
+com/gojek/solution/command/LeaveCommandExecutorTest.class
+com/gojek/solution/command/ColorToSlotNumberCommandExecutorTest.class
+com/gojek/solution/model/CarTest.class
+com/gojek/solution/command/StatusCommandExecutorTest.class
+com/gojek/solution/command/SlotForRegNumberCommandExecutorTest.class
+com/gojek/solution/command/ExitCommandExecutorTest.class

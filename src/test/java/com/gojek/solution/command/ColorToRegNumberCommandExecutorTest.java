@@ -21,8 +21,8 @@ public class ColorToRegNumberCommandExecutorTest {
 
     @Before
     public void setUp() throws Exception {
-        parkingLotService = new ParkingLotService();
-        outputPrinter = new OutputPrinter();
+        parkingLotService = mock(ParkingLotService.class);
+        outputPrinter = mock(OutputPrinter.class);
         colorToRegNumberCommandExecutor =
                 new ColorToRegNumberCommandExecutor(parkingLotService, outputPrinter);
     }
