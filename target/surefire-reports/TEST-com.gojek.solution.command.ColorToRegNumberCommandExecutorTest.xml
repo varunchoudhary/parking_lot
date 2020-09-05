@@ -64,6 +64,6 @@
   </properties>
   <testcase classname="com.gojek.solution.command.ColorToRegNumberCommandExecutorTest" name="testCarsWithAColor" time="0.002"/>
   <testcase classname="com.gojek.solution.command.ColorToRegNumberCommandExecutorTest" name="testValidCommand" time="0"/>
-  <testcase classname="com.gojek.solution.command.ColorToRegNumberCommandExecutorTest" name="testInvalidCommand" time="0.001"/>
-  <testcase classname="com.gojek.solution.command.ColorToRegNumberCommandExecutorTest" name="testWhenNoCarsFoundWithAColor" time="0.001"/>
+  <testcase classname="com.gojek.solution.command.ColorToRegNumberCommandExecutorTest" name="testInvalidCommand" time="0"/>
+  <testcase classname="com.gojek.solution.command.ColorToRegNumberCommandExecutorTest" name="testWhenNoCarsFoundWithAColor" time="0.002"/>
 </testsuite>

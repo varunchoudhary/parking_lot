@@ -63,6 +63,6 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.gojek.solution.command.LeaveCommandExecutorTest" name="testValidCommand" time="0.001"/>
-  <testcase classname="com.gojek.solution.command.LeaveCommandExecutorTest" name="testInvalidCommand" time="0"/>
-  <testcase classname="com.gojek.solution.command.LeaveCommandExecutorTest" name="testLeavingCarFromSlotMakesSlotFreeFromParkingService" time="0.001"/>
+  <testcase classname="com.gojek.solution.command.LeaveCommandExecutorTest" name="testInvalidCommand" time="0.001"/>
+  <testcase classname="com.gojek.solution.command.LeaveCommandExecutorTest" name="testLeavingCarFromSlotMakesSlotFreeFromParkingService" time="0"/>
 </testsuite>

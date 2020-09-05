@@ -10,5 +10,6 @@
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/CreateParkingLotCommandExecutorTest.java
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/model/ParkingLotTest.java
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/service/ParkingLotServiceTest.java
+/Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/MainTest.java
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/command/LeaveCommandExecutorTest.java
 /Users/varun/repos/javaprc/parking_lot/src/test/java/com/gojek/solution/model/CarTest.java

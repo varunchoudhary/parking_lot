@@ -37,4 +37,8 @@ public class OutputPrinter {
     public void slotAlreadyfilled() {
         printWithNewLine("Sorry, slot not available");
     }
+
+    public void parkingLotNotPresent() {
+        printWithNewLine("Parking lot does not exists to park.");
+    }
 }

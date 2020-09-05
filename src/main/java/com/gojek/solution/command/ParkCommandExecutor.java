@@ -22,17 +22,13 @@ public class ParkCommandExecutor extends CommandExecutor {
     }
 
     @Override
-    public void execute(Command command) throws ParkingLotException {
+    public void execute(Command command) throws ParkingLotException{
         final Car car =  new Car(command.getParams().get(0),command.getParams().get(1));
-        try{
+        try {
             final Integer slot = parkingLotService.park(car);
             outputPrinter.printWithNewLine("Allocated slot number: " + slot);
         } catch (NoFreeSlotAvailableException e) {
             outputPrinter.parkingLotFull();
-        } catch (SlotAlreadyOccupiedException e) {
-            outputPrinter.slotAlreadyfilled();
-        } catch (InvalidSlotException e) {
-            outputPrinter.notFound();
         }
     }
 }

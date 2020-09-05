@@ -26,7 +26,7 @@ public class ParkingLotService {
             parkingStrategy.addSlot(i);
         }
     }
-    public Integer park(final Car car) throws ParkingLotException, NoFreeSlotAvailableException, SlotAlreadyOccupiedException, InvalidSlotException {
+    public Integer park(final Car car) throws ParkingLotException {
         validateParkingLotExists();
         final Integer nextFreeSlot = parkingStrategy.getNextSlot();
         parkingLot.park(car,nextFreeSlot);

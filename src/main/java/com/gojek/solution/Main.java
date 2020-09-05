@@ -11,18 +11,19 @@ import com.gojek.solution.service.ParkingLotService;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InvalidCommandException, ParkingLotException {
+    public static void main(String[] args) throws IOException, InvalidCommandException,ParkingLotException{
         final OutputPrinter outputPrinter = new OutputPrinter();
         final ParkingLotService parkingLotService = new ParkingLotService();
         final CommandFactory commandFactory =
                 new CommandFactory(parkingLotService);
-        if (isInteractiveMode(args)) {
-            new InteractiveMode(commandFactory, outputPrinter).process();
-        } else if (isFileInputMode(args)) {
-            new FileMode(commandFactory, outputPrinter, args[0]).process();
-        } else {
-            throw new InvalidModeException();
-        }
+       if (isInteractiveMode(args)) {
+           new InteractiveMode(commandFactory, outputPrinter).process();
+       } else if (isFileInputMode(args)) {
+           new FileMode(commandFactory, outputPrinter, args[0]).process();
+       } else {
+           throw new InvalidModeException();
+       }
+
     }
 
     private static boolean isFileInputMode(final String[] args) {

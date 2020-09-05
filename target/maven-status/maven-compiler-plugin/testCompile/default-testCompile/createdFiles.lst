@@ -1,4 +1,5 @@
 com/gojek/solution/model/CommandTest.class
+com/gojek/solution/MainTest.class
 com/gojek/solution/model/ParkingLotTest.class
 com/gojek/solution/strategy/NaturalOrderingParkingStrategyTest.class
 com/gojek/solution/service/ParkingLotServiceTest.class

@@ -62,7 +62,6 @@
     <property name="java.vendor.version" value="18.3"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testZeroCapacity" time="0"/>
   <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testValidCapacity" time="0"/>
   <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testMoreThanMaxCapacity" time="0"/>
   <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testParkingCar" time="0"/>
@@ -73,4 +72,5 @@
   <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testMakingSlotHigherThanCapacityFree" time="0"/>
   <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testMakingInvalidSlotFree" time="0"/>
   <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testNegativeCapacity" time="0"/>
+  <testcase classname="com.gojek.solution.model.ParkingLotTest" name="testZeroCapacity" time="0"/>
 </testsuite>
