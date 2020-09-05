@@ -55,7 +55,7 @@ public class ParkingLotService {
         return occupiedSlotsList;
     }
 
-    public List<Slot>getSlotsForColor(final String color) throws ParkingLotException {
+    public List<Slot> getSlotsForColor(final String color) throws ParkingLotException {
         final List<Slot> occupiedSlots = getOccupiedSlots();
         List<Slot> final_colored_car = new ArrayList<Slot>();
         for (Slot slot : occupiedSlots){
